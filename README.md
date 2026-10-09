@@ -6,6 +6,9 @@
     - **NextJS, TailwindCSS, Postgress**
 
 **Собери свой ПК:**
+## Запуск
+- через Docker запуск БД
+- запуск prisma `npx prisma studio`
 
 - 09.10.2026 добавлено:
   - БД postgress запуск через docker
