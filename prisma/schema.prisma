@@ -31,7 +31,7 @@ model Component {
   name String
   price Int
 
-  socket String
+  socket String?
   buildComponents BuildComponent[]
 }
 // модель билда сборки ПК
@@ -77,12 +77,12 @@ model Like {
 
 }
 // типы компонентов
-enum ComponetnType {
+enum ComponentType {
   cpu
   gpu
   ram
   ssd
-  motherBoard
+  motherboard
   psu
   case
   cooler
