@@ -1,32 +1,39 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono, Roboto } from "next/font/google";
+import type {Metadata} from "next";
+import {Geist, Geist_Mono, Roboto} from "next/font/google";
 import "./globals.css";
-import { cn } from "@/lib/utils";
+import {cn} from "@/lib/utils";
+import Header from "@/components/header";
+import {Suspense} from "react";
 
-const roboto = Roboto({subsets:['latin'],variable:'--font-sans'});
+const roboto = Roboto({subsets: ['latin'], variable: '--font-sans'});
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+	variable: "--font-geist-sans",
+	subsets: ["latin"],
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+	variable: "--font-geist-mono",
+	subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "ПК сборка",
-  description: "Собери свой ПК",
+	title: "ПК сборка",
+	description: "Собери свой ПК",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
-  return (
-    <html
-      lang="ru"
-      className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-sans", roboto.variable, 'dark')}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
-    </html>
-  );
+export default function RootLayout({children}: LayoutProps<"/">) {
+	return (
+		<html
+			lang="ru"
+			className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-sans", roboto.variable, 'dark')}
+		>
+		<body className="min-h-full flex flex-col">
+		<Suspense fallback={null}>
+			<Header/>
+		</Suspense>
+		{children}
+		</body>
+		</html>
+	);
 }

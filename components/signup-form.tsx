@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
 import {useActionState} from "react";
-import {signupAction, SignUpState} from "@/app/signup/actions";
+import {signupAction, SignUpState} from "@/app/signout/actions";
 import ErrorMessage from "@/components/error-message";
 
 export function SignupForm({ ...props }: React.ComponentProps<typeof Card>) {
